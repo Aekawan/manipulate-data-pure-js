@@ -31,7 +31,6 @@ findDay = (users) => {
         fri = Object.assign({}, { group_name: "friday", data: friData }),
         sat = Object.assign({}, { group_name: "saturday", data: satData }),
         objUsers = [{ ...sun }, { ...mon }, { ...tue }, { ...wed }, { ...thu }, { ...fri }, { ...sat }]
-
     return objUsers
 }
 
@@ -44,12 +43,10 @@ async function main() {
     let dataObj = findDay(users)
     console.log(dataObj)
     const itemList = dataObj.map((user, i) => {
-
         let div = document.createElement('div');
         div.className = 'card';
         div.innerHTML = ` <div class="title" id="card-${i}" >${createTitle(user.group_name)}</div>`
         document.getElementById("root").appendChild(div);
-
         user.data.map(u => {
             let div = document.createElement('div');
             div.className = 'card-item';
