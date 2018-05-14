@@ -52,7 +52,7 @@ async function main(url) {
         user.data.map(u => {
             let div = document.createElement('div');
             div.className = 'card-item';
-            div.innerHTML =  `<img class="img-card" src=${u.photo}></img>
+            div.innerHTML = `<img class="img-card" src=${u.photo}></img>
                                     <div class="card-body">
                                     <p>${u.name}</p>
                              </div>`
