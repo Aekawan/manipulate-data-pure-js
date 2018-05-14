@@ -39,7 +39,8 @@ function createTitle(name) {
 }
 
 async function main() {
-    let users = await fetchUsers("https://uinames.com/api/?ext&amount=25")
+    const url = "https://uinames.com/api/?ext&amount=25"
+    let users = await fetchUsers(url)
     let dataObj = findDay(users)
     console.log(dataObj)
     const itemList = dataObj.map((user, i) => {
