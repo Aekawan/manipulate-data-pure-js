@@ -1,4 +1,4 @@
-async function fetchUsers(url) {
+fetchUsers = async (url) => {
     try {
         let data = await fetch(url)
         return await data.json()
@@ -11,7 +11,7 @@ parseDay = (timestamp) => {
     return new Date(timestamp * 1000).getDay()
 }
 
-findDay = (users) => {
+groupDay = (users) => {
     const sunData = [], monData = [], tueData = [], wedData = [], thuData = [], friData = [], satData = []
     for (let user of users) {
         let rawDate = user.birthday.raw
@@ -34,14 +34,14 @@ findDay = (users) => {
     return objUsers
 }
 
-function createTitle(name) {
+createTitle = (name) => {
     return name.substr(0, 3).toUpperCase()
 }
 
 async function main() {
     const url = "https://uinames.com/api/?ext&amount=25"
     let users = await fetchUsers(url)
-    let dataObj = findDay(users)
+    let dataObj = groupDay(users)
     console.log(dataObj)
     const itemList = dataObj.map((user, i) => {
         let div = document.createElement('div');
