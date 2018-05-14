@@ -42,6 +42,7 @@ function createTitle(name) {
 async function main() {
     let users = await fetchUsers("https://uinames.com/api/?ext&amount=25")
     let dataObj = findDay(users)
+    console.log(users)
     const itemList = dataObj.map((user, i) => {
 
         let div = document.createElement('div');
