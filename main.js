@@ -39,8 +39,8 @@ function createTitle(name) {
     return name.substr(0, 3).toUpperCase()
 }
 
-async function main(url) {
-    let users = await fetchUsers(url)
+async function main() {
+    let users = await fetchUsers("https://uinames.com/api/?ext&amount=25")
     let dataObj = findDay(users)
     const itemList = dataObj.map((user, i) => {
 
@@ -59,5 +59,4 @@ async function main(url) {
             document.getElementById(`card-${i}`).appendChild(div);
         })
     })
-    //let container = `<div class="container">${itemList}</div>`
 } 
